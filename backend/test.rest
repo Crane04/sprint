@@ -1,0 +1,21 @@
+POST http://localhost:3000/users/create
+Content-Type: application/json
+
+{
+    "firstName": "Mayowa",
+    "lastName": "Yusuf",
+    "matricNumber": "220221181",
+    "email": "mayowayusuf3004@gmail.com",
+    "department": "Mechanical Engineering",
+    "level": "300",
+    "password": "Crane3004"
+}
+
+###
+POST http://localhost:3000/users/signin
+Content-Type: application/json
+
+{
+    "identifier": "220221181",
+    "password": "Crane3004"
+}
