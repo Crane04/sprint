@@ -1,10 +1,11 @@
 const AsyncHandler = require("express-async-handler");
 const User = require("../../models/User");
 const Courses = require("../../models/Courses");
-
+    
 const registerCourses = AsyncHandler(async (req, res) => {
   try {
     const { courseCodes } = req.body;
+    console.log(courseCodes)
 
     if (!Array.isArray(courseCodes) || courseCodes.length === 0) {
       return res.status(400).json({ message: "Invalid course codes array" });

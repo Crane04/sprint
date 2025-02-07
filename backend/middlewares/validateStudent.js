@@ -4,7 +4,7 @@ const User = require("../models/User");
 const ValidateStudent = async (req, res, next) => {
   let token;
   let authHeader =
-    req.headers.Authorization || req.headers.authorization || req.cookies.jwt;
+    req?.headers?.Authorization || req?.headers?.authorization || req?.cookies?.jwt;
 
   if (authHeader && authHeader.startsWith("Bearer")) {
     token = authHeader.split(" ")[1];
@@ -19,11 +19,13 @@ const ValidateStudent = async (req, res, next) => {
       try {
         const existingUser = await User.findById(decoded?.id).exec();
         if (!existingUser) {
+          console.log("unauthorized")
           return res.status(401).json({
             detail: "Unauthorized access!",
           });
         }
-        req.user = decoded.user;
+        console.log(req.body)
+        req.user = existingUser;
         next();
       } catch (error) {
         console.error(error);

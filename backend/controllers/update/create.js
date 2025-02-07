@@ -5,13 +5,14 @@ const Courses = require("../../models/Courses");
 const createUpdate = AsyncHandler(async (req, res) => {
   try {
     const { courseCode, lecturer, startsBy, endsBy, type } = req.body;
-
+    console.log("here")
     // Validate dates
     if (startsBy >= endsBy) {
       return res.status(400).json({ message: "Invalid date range" });
     }
 
     const course = await Courses.findOne({ code: courseCode });
+    
     if (!course) {
       return res.status(404).json({ message: "Course not found" });
     }
@@ -24,7 +25,7 @@ const createUpdate = AsyncHandler(async (req, res) => {
       postedBy: req.user._id, // Assuming req.user is set
       type,
     });
-
+    console.log(update)
     res.status(201).json(update);
   } catch (error) {
     console.error(error);

@@ -16,6 +16,33 @@ POST http://localhost:3000/users/signin
 Content-Type: application/json
 
 {
-    "identifier": "220221181",
-    "password": "Crane3004"
+    "identifier": "220221192",
+    "password": "123456"
 }
+###
+GET http://localhost:3000/users/get
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTM4ZGQ2MmYxMmE3NTI1N2JjNGY0MCIsImVtYWlsIjoib3llYmFuam9zaGFua2VsMTdAZ21haWwuY29tIiwibWF0cmljTnVtYmVyIjoiMjIwMjIxMTkyIiwiaWF0IjoxNzM4NzcyNjg5fQ.CtyukwHb8oJI-5OLXCDAxHl33d0__DGby2LivR9Vpxc
+
+###
+post http://localhost:3000/courses/create
+Content-Type: application/json
+
+{
+    "code": "ECE 201",
+    "title": "Electricity"
+}
+###
+get http://localhost:3000/courses/get
+
+###
+post http://localhost:3000/users/register-course
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTM4ZGQ2MmYxMmE3NTI1N2JjNGY0MCIsImVtYWlsIjoib3llYmFuam9zaGFua2VsMTdAZ21haWwuY29tIiwibWF0cmljTnVtYmVyIjoiMjIwMjIxMTkyIiwiaWF0IjoxNzM4NzcyNjg5fQ.CtyukwHb8oJI-5OLXCDAxHl33d0__DGby2LivR9Vpxc
+Content-Type: application/json
+
+{"courseCodes": [
+    "MAT 101"
+]}
+
+###
+get http://localhost:3000/users/courses
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YTM4ZGQ2MmYxMmE3NTI1N2JjNGY0MCIsImVtYWlsIjoib3llYmFuam9zaGFua2VsMTdAZ21haWwuY29tIiwibWF0cmljTnVtYmVyIjoiMjIwMjIxMTkyIiwiaWF0IjoxNzM4NzcyNjg5fQ.CtyukwHb8oJI-5OLXCDAxHl33d0__DGby2LivR9Vpxc

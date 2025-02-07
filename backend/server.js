@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const userRoutes = require("./routes/userRoutes");
 const updateRoutes = require("./routes/updatesRoutes")
+const courseRoutes = require("./routes/courseRoutes")
 
 // Load environment variables
 dotenv.config();
@@ -25,6 +26,7 @@ app.use(
 );
 app.use("/users", userRoutes);
 app.use("/updates", updateRoutes)
+app.use("/courses", courseRoutes);
 // Connect to MongoDB
 mongoose
   .connect(process.env.MONGO_URI)

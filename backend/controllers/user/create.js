@@ -54,7 +54,9 @@ const createUser = AsyncHandler(async (req, res) => {
       password: hashedPassword,
     });
 
-    res.status(201).json(newUser);
+    res.status(201).json({
+      "message": "Your account has been created"
+    });
   } catch (error) {
     return res
       .status(400)

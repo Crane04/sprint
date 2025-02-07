@@ -4,7 +4,7 @@ const User = require("../models/User");
 const ValidateHOC = async (req, res, next) => {
   let token;
   let authHeader =
-    req.headers.Authorization || req.headers.authorization || req.cookies.jwt;
+    req?.headers?.Authorization || req?.headers?.authorization || req?.cookies?.jwt;
 
   if (authHeader && authHeader.startsWith("Bearer")) {
     token = authHeader.split(" ")[1];
@@ -23,7 +23,7 @@ const ValidateHOC = async (req, res, next) => {
             detail: "Unauthorized access!",
           });
         }
-        req.user = decoded.user;
+        req.user = existingUser;
         next();
       } catch (error) {
         console.error(error);

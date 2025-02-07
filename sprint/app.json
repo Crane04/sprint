@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "sprint",
+    "slug": "sprint",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/pulse.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/pulse.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.rahmayowa.sprint",
+      "runtimeVersion": "1.0.0"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/pulse.png",
+        "backgroundColor": "#ffffff"
+      },
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
+    },
+    "web": {
+      "favicon": "./assets/pulse.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "b53d6845-00aa-425c-9862-e9d63eadbcc8"
+      }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/b53d6845-00aa-425c-9862-e9d63eadbcc8"
+    }
+  }
+}
