@@ -27,6 +27,9 @@ app.use(
 app.use("/users", userRoutes);
 app.use("/updates", updateRoutes)
 app.use("/courses", courseRoutes);
+app.use("/", (req, res)=> {
+  return res.json("Okay")
+})
 // Connect to MongoDB
 mongoose
   .connect(process.env.MONGO_URI)
