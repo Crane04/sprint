@@ -103,7 +103,7 @@ const TestUpdates = ({ userData }) => {
         <View style={styles.updatesBox}>
           <View style={styles.updates}>
             {updates.length === 0 ? (
-              <Text style={styles.noUpdatesText}>No Class Updates</Text>
+              <Text style={styles.noUpdatesText}>No Test Updates</Text>
             ) : (
               <FlatList
                 data={updates}

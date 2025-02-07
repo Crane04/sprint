@@ -48,7 +48,7 @@ const SignInScreen = ({ navigation }) => {
   };
 
   return (
-    <Container bg={"#ADD8E6"}>
+    <Container>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={styles.container}>
           <Text style={styles.header}>Log In to Your Account</Text>
@@ -93,7 +93,6 @@ export const styles = StyleSheet.create({
   },
   header: {
     textAlign: "center",
-    fontFamily: "OpenSans_700Bold",
     fontSize: 24,
     marginTop: 25,
     marginBottom: 20,

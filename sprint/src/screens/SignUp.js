@@ -100,10 +100,10 @@ const SignInScreen = ({ navigation }) => {
     }
   };
   return (
-    <Container bg={"#ADD8E6"}>
+    <Container>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <ScrollView style={styles.container}>
-          <Text style={styles.header}>Join Platform</Text>
+          <Text style={styles.header}>Create An Account</Text>
           <Input
             label={"First Name"}
             placeholder="John"
