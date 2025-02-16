@@ -32,6 +32,10 @@ const UpdatesSchema = mongoose.Schema({
     enum: ["class", "test"],
     required: true,
   },
+  venue: {
+    type: String,
+    required: true,
+  }
 });
 
 const Updates = mongoose.model("Updates", UpdatesSchema);

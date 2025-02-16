@@ -14,6 +14,7 @@ const NewUpdate = ({ type, cancel }) => {
     lecturer: "",
     startsBy: new Date(),
     endsBy: new Date(),
+    venue: "",
   });
   const [courses, setCourses] = useState([]);
   const handleCreateUpdate = async () => {
@@ -23,7 +24,8 @@ const NewUpdate = ({ type, cancel }) => {
       !newUpdate.lecturer ||
       !newUpdate.startsBy ||
       !newUpdate.endsBy ||
-      !type
+      !type ||
+      !newUpdate.venue
     ) {
       alert("All fields are required!");
       return;
@@ -38,6 +40,7 @@ const NewUpdate = ({ type, cancel }) => {
           startsBy: newUpdate.startsBy,
           endsBy: newUpdate.endsBy,
           type,
+          venue: newUpdate.venue,
         },
         {
           headers: { Authorization: `Bearer ${jwt}` },
@@ -98,6 +101,11 @@ const NewUpdate = ({ type, cancel }) => {
           }
         />
         <Input
+          label="Venue"
+          value={newUpdate.venue}
+          onChangeText={(text) => setNewUpdate({ ...newUpdate, venue: text })}
+        />
+        <Input
           label="Start Time"
           placeholder="YYYY-MM-DD HH:mm"
           value={newUpdate.startsBy}
@@ -149,7 +157,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     marginBottom: 10,
-    textTransform: "capitalize"
+    textTransform: "capitalize",
   },
 });
 export default NewUpdate;

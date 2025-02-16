@@ -4,11 +4,11 @@
     "slug": "sprint",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/pulse.png",
+    "icon": "./assets/notis.jpg",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/pulse.png",
+      "image": "./assets/notis.jpg",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,7 +19,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/pulse.png",
+        "foregroundImage": "./assets/notis.jpg",
         "backgroundColor": "#ffffff"
       },
       "runtimeVersion": {
@@ -27,7 +27,7 @@
       }
     },
     "web": {
-      "favicon": "./assets/pulse.png"
+      "favicon": "./assets/notis.jpg"
     },
     "extra": {
       "eas": {

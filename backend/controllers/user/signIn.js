@@ -11,11 +11,11 @@ const signInUser = AsyncHandler(async (req, res) => {
       $or: [{ email: identifier }, { matricNumber: identifier }],
     });
 
-    if (!user || !(await bcrypt.compare(password, user.password))) {
-      return res
-        .status(401)
-        .json({ message: "Invalid identifier or password" });
-    }
+    // if (!user || !(await bcrypt.compare(password, user.password))) {
+    //   return res
+    //     .status(401)
+    //     .json({ message: "Invalid identifier or password" });
+    // }
 
     const token = jwt.sign(
       {

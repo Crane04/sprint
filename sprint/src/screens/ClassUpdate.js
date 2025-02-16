@@ -74,7 +74,7 @@ const ClassUpdate = ({ route }) => {
     try {
       const response = await postRequest(
         `/updates/delete/${id}`,
-        {id},
+        { id },
         {
           headers: { Authorization: `Bearer ${jwt}` },
         }
@@ -82,7 +82,7 @@ const ClassUpdate = ({ route }) => {
       console.log(response);
       if (response?.data?.success) {
         alert("Update deleted successfully!");
-        navigation.navigate("Tabs")
+        navigation.navigate("Tabs");
       } else {
         alert(response?.data?.message || "Sorry, an error occurred");
       }
@@ -104,16 +104,23 @@ const ClassUpdate = ({ route }) => {
             { label: "Course Code", value: update?.course?.code },
             { label: "Course Title", value: update?.course?.title },
             { label: "Lecturer", value: update?.lecturer },
+            { label: "Venue", value: update?.venue },
             {
               label: "Starts By",
               value: update?.startsBy
-                ? moment.utc(update.startsBy).local().format("MMMM Do YYYY, h:mm A")
+                ? moment
+                    .utc(update.startsBy)
+                    .local()
+                    .format("MMMM Do YYYY, h:mm A")
                 : "",
             },
             {
               label: "Ends By",
               value: update?.endsBy
-                ? moment.utc(update?.endsBy).local().format("MMMM Do YYYY, h:mm A")
+                ? moment
+                    .utc(update?.endsBy)
+                    .local()
+                    .format("MMMM Do YYYY, h:mm A")
                 : "",
             },
             { label: "Duration", value: duration },

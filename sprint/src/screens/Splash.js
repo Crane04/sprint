@@ -61,7 +61,7 @@ const Splash = ({ navigation }) => {
         ) : (
           <>
             <FontAwesome name="bell" size={150} color="#002366" />
-            <Text style={styles.brandName}>UP!</Text>
+            <Text style={styles.brandName}>NOTIS!</Text>
             <Text>Get latest class updates seamlessly!</Text>
           </>
         )}

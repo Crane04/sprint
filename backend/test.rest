@@ -28,8 +28,8 @@ post http://localhost:3000/courses/create
 Content-Type: application/json
 
 {
-    "code": "ECE 201",
-    "title": "Electricity"
+    "code": "MEE 309",
+    "title": "Strength of Materials II"
 }
 ###
 get http://localhost:3000/courses/get

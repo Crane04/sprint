@@ -12,6 +12,7 @@ const RescheduleUpdate = ({ type, cancel, id }) => {
   const [newUpdate, setNewUpdate] = useState({
     startsBy: new Date(),
     endsBy: new Date(),
+    venue: "",
   });
   const [courses, setCourses] = useState([]);
   const handleCreateUpdate = async () => {
@@ -28,6 +29,7 @@ const RescheduleUpdate = ({ type, cancel, id }) => {
           startsBy: newUpdate.startsBy,
           endsBy: newUpdate.endsBy,
           type,
+          venue: newUpdate.venue
         },
         {
           headers: { Authorization: `Bearer ${jwt}` },
@@ -47,24 +49,6 @@ const RescheduleUpdate = ({ type, cancel, id }) => {
       setLoading(false);
     }
   };
-
-  const getCourses = async () => {
-    try {
-      const response = await getRequest("/courses/get", {
-        headers: { Authorization: `Bearer ${jwt}` },
-      }); // Fetch courses
-      setCourses(
-        response.map((course) => ({
-          label: course.code,
-          value: course.code,
-        }))
-      ); // Map response before setting state
-    } catch (error) {
-      console.error("Error fetching courses:", error);
-    }
-  };
-
-
 
   return (
     <View style={styles.modalContainer}>
@@ -87,7 +71,11 @@ const RescheduleUpdate = ({ type, cancel, id }) => {
           onChangeText={(text) => setNewUpdate({ ...newUpdate, endsBy: text })}
           type={"date"}
         />
-
+        <Input
+          label="Venue"
+          value={newUpdate.venue}
+          onChangeText={(text) => setNewUpdate({ ...newUpdate, venue: text })}
+        />
         <View style={styles.buttonContainer}>
           <Button
             text="Cancel"
